@@ -9,7 +9,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #00ff08;
   }
   
   li {
@@ -32,7 +32,7 @@ ul {
 .block {
     display: block;
     padding: 8px;
-    background-color: black;
+    background-color: rgb(85, 255, 0);
 }
 
 #budget {
