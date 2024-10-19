@@ -14,6 +14,16 @@ def login():
     return render_template('signin.html')
 
 
+#new rounte output the loans on the database.
+@app.route('/loans')
+def loans():
+    conn = db_connect()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM people') 
+    person = cur.fetchall()
+    conn.close()
+    
+    return render_template('loans.html', person=person)
 
 
 @app.route('/budget/')
