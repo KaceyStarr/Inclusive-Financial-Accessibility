@@ -1,10 +1,7 @@
 from flask import Flask, render_template, request
 from jinja2 import Environment, PackageLoader, select_autoescape
 
-env = Environment(
-    loader=PackageLoader("budgetbuddy"),
-    autoescape=select_autoescape()
-) 
+env = Environment(loader=PackageLoader("budgetbuddy"), autoescape=select_autoescape() ) 
 
 app = Flask(__name__)
 
