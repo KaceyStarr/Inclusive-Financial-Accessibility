@@ -8,15 +8,15 @@ def db_connect():
     db.row_factory = sqlite3.Row
     return db
 
-@app.route('/budget/<username>')
-def home(username):
+@app.route('/budget/')
+def home():
     conn = db_connect()
     cur = conn.cursor()
     cur.execute('SELECT * FROM people')
     people = cur.fetchall()
     conn.close()
     
-    return render_template('budget.html', people=people, username=username)
+    return render_template('budget.html', people=people)
 
 if __name__ == '__main__':
     app.run(debug=True)
