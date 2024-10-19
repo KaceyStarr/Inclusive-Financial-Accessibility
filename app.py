@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 
-website = Flask(__name__)
+app = Flask(__name__)
 
 budgets = {}
 spending = {}
@@ -11,11 +11,14 @@ savings_goals = {}
 def home():
     return render_template('index.html')
 
+@app.route('/set_budget', methods=['POST'])
 def set_budget():
-    budgets
-def add_transaction():
+    user = request.form['user']
 
-def saving_goal():
+
+@app.route('/add_transaction' methods=['POST'])
+def add_transaction():
+    user = request.form['user']
 
 
 
