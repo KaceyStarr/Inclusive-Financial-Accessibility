@@ -6,6 +6,8 @@
     <title>Credit</title>
 </head>
 <body>
-    <p id="credit">FICO Score: {{credit}}</p>
+    {% for person in people %}
+    <p id="credit">FICO Score: {{ person['credit'] }}</p>
+    {% endfor %}
 </body>
 </html>
