@@ -11,14 +11,14 @@ savings_goals = {}
 def home():
     return render_template('index.html')
 
-@app.route('/set_budget', methods=['POST'])
-def set_budget():
+@app.route('/budget', methods=['POST'])
+def budget():
     user = request.form['user']
 
-
-@app.route('/add_transaction' methods=['POST'])
-def add_transaction():
+@app.route('/savings', methods=['POST'])
+def saving():
     user = request.form['user']
 
-
-
+@app.route('/credit', methods=['POST'])
+def credit():
+    usesr = request.form['user']
