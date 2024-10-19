@@ -1,18 +1,18 @@
-import sqlite3 
-import datetime
+import sqlite3
 
 conn = sqlite3.connect("expenses.db")
 cur = conn.cursor()
 
 #function to add a user
 def add_user(username, password, budget):
-    conn = sqlite3.connect('expenses.db')
+    conn = sqlite3.connect('expenses.sqlite')
     cursor = conn.cursor()
 
     #allows to connect with database
     cursor.execute('''
     INSERT INTO people (username, password, budget) VALUES (?, ?, ?)
-    ''', (username, password, budget))
+    ''', (username, password, budget)
+    )
 
     conn.commit()  
     conn.close()   
