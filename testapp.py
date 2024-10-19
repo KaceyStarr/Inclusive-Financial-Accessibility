@@ -9,7 +9,7 @@ def db_connect():
     return db
 
 @app.route('/budget/')
-def home():
+def budget():
     conn = db_connect()
     cur = conn.cursor()
     cur.execute('SELECT * FROM people')
@@ -20,6 +20,9 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+# @app.route('/credit')
+# def 
 
 
 # @app.route('/budget', methods=['POST'])
