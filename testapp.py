@@ -8,6 +8,15 @@ def db_connect():
     db.row_factory = sqlite3.Row
     return db
 
+
+# Log in 
+@app.route('/login', methods=['POST'])
+def login():
+    return render_template('signin.html')
+
+
+
+
 @app.route('/budget/')
 def budget():
     conn = db_connect()
@@ -17,6 +26,7 @@ def budget():
     conn.close()
     
     return render_template('budget.html', people=people)
+
 
 @app.route('/credit')
 def credit():
