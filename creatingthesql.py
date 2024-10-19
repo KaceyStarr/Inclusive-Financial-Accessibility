@@ -7,9 +7,8 @@ conn = sqlite3.connect("expenses.db")
 cur = conn.cursor()
 
 # Create the expenses table if it doesn't exist
-cur.execute("""
-CREATE TABLE IF NOT EXISTS expenses (
-    id INTEGER PRIMARY KEY,
+cur.execute("""CREATE TABLE IF NOT EXISTS expenses 
+    (id INTEGER PRIMARY KEY,
     date DATE,
     description TEXT,
     category TEXT,
