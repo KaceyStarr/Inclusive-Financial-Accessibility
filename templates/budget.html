@@ -7,6 +7,15 @@
     <title>Budget</title>
 </head>
 <body id="budget">
-    <p>Your current balance is: {{budget}}</p>
+    {% for person in people %}
+    <h1>Welcome, {{ person['username'] }}</h1>
+    {% endfor %}
+    <h1>Your Current Balance</h1>
+    <ul>
+        {% for person in people %}
+            <li>{{ person['username'] }}: {{ person['budget'] }}</li>  <!-- Adjust column names -->
+        {% endfor %}
+    </ul>
+        
 </body>
 </html>
