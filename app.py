@@ -21,4 +21,9 @@ def saving():
 
 @app.route('/credit', methods=['POST'])
 def credit():
-    usesr = request.form['user']
+    user = request.form['user']
+    credit_scores = int(request.form['credit_score'])
+    credit_scores[user] = credit_scores
+
+if __name__ == '__main__':
+    app.run(debug=True)
