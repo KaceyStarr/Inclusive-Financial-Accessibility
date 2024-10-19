@@ -9,7 +9,6 @@ def db_connect():
     return db
 
 
-# Log in 
 @app.route('/login', methods=['POST'])
 def login():
     return render_template('signin.html')
