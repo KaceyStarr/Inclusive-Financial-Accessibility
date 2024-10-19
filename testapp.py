@@ -18,6 +18,16 @@ def budget():
     
     return render_template('budget.html', people=people)
 
+@app.route('/credit')
+def credit():
+    conn = db_connect()
+    cur = conn.cursor()
+    cur.execute('SELECT * FROM people')
+    people = cur.fetchall()
+    conn.close()
+
+    return render_template('credit.html', people=people)
+
 if __name__ == '__main__':
     app.run(debug=True)
 

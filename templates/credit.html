@@ -6,7 +6,13 @@
     <title>Credit</title>
 </head>
 <body>
+<<<<<<< HEAD
     <img src="../static/imgs/creditscore.png" id="credit">
     <p id="credit">FICO Score: {{credit}}</p>
+=======
+    {% for person in people %}
+    <p id="credit">FICO Score: {{ person['credit'] }}</p>
+    {% endfor %}
+>>>>>>> 336ee4e093d6cec075e40e53075e87e767995381
 </body>
 </html>
