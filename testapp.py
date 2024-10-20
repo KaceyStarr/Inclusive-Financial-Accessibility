@@ -19,11 +19,11 @@ def login():
 def loans():
     conn = db_connect()
     cur = conn.cursor()
-    cur.execute('SELECT * FROM people') 
-    person = cur.fetchall()
+    cur.execute('SELECT * FROM people')
+    people = cur.fetchall()
     conn.close()
-    
-    return render_template('loans.html', person=person)
+
+    return render_template('loans.html', people=people)
 
 
 @app.route('/budget/')
