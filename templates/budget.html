@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget</title>
 </head>
 <body id="budget">
-    <img src="../static/imgs/budget.png" >
-    {% for person in people %}
-    <h1>Welcome, {{ person['username'] }}</h1>
-    {% endfor %}
+    
+    <form   action="{{ url_for('logout') }}" method="POST">
+    <input type="submit" value="logout">
+    </form>
+
+    <h1>Welcome, {{ user['username'] }}</h1>
     <h1>Your Current Balance</h1>
     <ul>
-        {% for person in people %}
-            <li>{{ person['username'] }}: {{ person['budget'] }}</li>  
-        {% endfor %}
+        <li>{{ user['budget'] }}</li>
     </ul>
-        
+    <img src="../static/imgs/budget.png" >
+</body>
     
 </body>
 </html>

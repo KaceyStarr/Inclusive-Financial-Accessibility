@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+</head>
+<body>
+    
+<!-- the cool thing about this is that the errors -->
+<!-- will stack -->
+    {% if errors %}
+    <div>
+        <h1>ERROR:</h1>
+        {% for error in errors %}
+        <p>{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    
+    {% if success %}
+    <div>
+
+        <h1>SUCCESS!</h1>
+        <p>You are being redirected to the log-in page!</p>
+        <p>If that doesn't work, go ahead and <a href="/login">click here</a>.</p>
+        
+        <!-- redirect the user to /login after 5 seconds -->
+        <script> type="text/javascript"
+            setTimeout( () => {
+                window.location.href = "{{ url_for('login') }}";
+            }, 3000)
+        </script>
+
+    </div>
+
+    {% endif %}
+
+
+    <h1>Register!</h1>
+    <form action="/register" method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+        
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <label for="confirm-password">Confirm Password:</label><br>
+        <input type="password" id="password2" name="password2" required><br><br>
+        
+        <input type="submit" value="SIGN ME UP!">
+    </form>
+</body>
+</html>
