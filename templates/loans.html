@@ -7,9 +7,11 @@
 </head>
 <body>
 
+    <form   action="{{ url_for('logout') }}" method="POST">
+        <input type="submit" value="logout">
+        </form>
 
-{% for person in people %}
-    <p>{{ person['loans'] }} </p>
-    {% endfor %}
+    <p>YOU OWE US:  </p>
+    <p>{{ user['loans'] }} </p>
 
 </body>

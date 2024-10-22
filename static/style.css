@@ -1,5 +1,34 @@
 /* . is for classes and # is for html ids */
 
+
+
+#loginform{
+  bottom: 50%;
+  left: 17%;
+  position: absolute;
+  scale: 125%;
+  text-align: center;
+}
+
+#signin{
+  position: absolute;
+  bottom: -5%;
+  left: -1%;
+  width: 800px;
+  height: 1000px; 
+  scale: 90%;
+  display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
 body {
     background-color: rgb(187, 187, 5);
 }
@@ -9,7 +38,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #00ff08;
+    background-color: green;
   }
   
   li {
@@ -38,7 +67,7 @@ ul {
 }
 
 #budget {
-font-size: 200px;
+font-size: 24px;
 background-color: gold;
 }
 
