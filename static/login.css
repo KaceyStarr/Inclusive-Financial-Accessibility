@@ -1,0 +1,22 @@
+/* Ensure the body and html elements take up the full height of the viewport */
+body, html {
+    height: 100%;
+  
+}
+
+/* Center the container both vertically and horizontally */
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Restrict the card's width to a maximum of 400px */
+.card {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(94, 92, 92, 0.05); /* Highly transparent background */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Thinner, more subtle shadow */
+}

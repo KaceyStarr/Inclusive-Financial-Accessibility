@@ -1,57 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-    <link rel="stylesheet" href="../static/style.css">
-    
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=
-    , initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign In</title>
+    
+    <!-- Link to Bootstrap CSS (via CDN) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Link to the custom login CSS file under static directory -->
+    <link rel="stylesheet" href="../static/login.css">
 </head>
-<body style="background-image: url('../static/imgs/wall.png'); 
-             background-repeat: repeat; 
-             background-size: 140px;
-             background-color: white;">
 
+<body>
 
-
-
-<img src="../static/imgs/signin.png" id="signin">
-<div id="loginform">
-    <h1>Sign in!</h1>
-    <form action="" method="POST">
-        <label id="user">Username</label>
-        <input type="text" id="user" name="user" required><br>
-        <label id="password">Password</label>
-        <input type="text" id="password" name="password" required><br>
-        <input type="submit" value="Login">
-    </form> 
+<!-- Centered Container Section -->
+<div id="loginform" class="container">
+    <div class="card p-4">
+        <h1 class="text-center">Sign In</h1>
+        <form action="" method="POST" class="form-group">
+            <label for="user">Username</label>
+            <input type="text" id="user" name="user" class="form-control" required><br>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" required><br>
+            
+            <input type="submit" value="Login" class="btn btn-primary btn-block">
+        </form> 
+    </div>
 </div>
 
+<!-- Success message section -->
 {% if success %}
-<div style="position: absolute; background-color: rgb(187, 187, 5)">
-    <h1>SUCCESS!</h1>
+<div class="alert alert-success" style="position: absolute; width: 100%; top: 20px; left: 0;">
+    <h1 class="text-center">SUCCESS!</h1>
     
-    <!-- redirect the user to /budget after 5 seconds -->
-    <script> type="text/javascript"
-        setTimeout( () => {
+    <!-- redirect the user to /budget after 3 seconds -->
+    <script type="text/javascript">
+        setTimeout(() => {
             window.location.href = "{{ url_for('budget') }}";
         }, 3000)
     </script>
-
 </div>
-
 {% endif %}
 
-
+<!-- Error message section -->
 {% if errors %}
-<div style="position: absolute; background-color: rgb(187, 187, 5)">
-    <h1>ERROR:</h1>
+<div class="alert alert-danger" style="position: absolute; width: 100%; top: 20px; left: 0;">
+    <h1 class="text-center">ERROR:</h1>
     {% for error in errors %}
     <p>{{ error }}</p>
     {% endfor %}
 </div>
 {% endif %}
+
+<!-- Optional Bootstrap JS (for additional features like modals, tooltips, etc.) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
